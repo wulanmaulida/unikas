@@ -1,18 +1,124 @@
+
 <ion-header>
-  <ion-navbar>
+   <ion-navbar>
+    <table class>
+      <thead>
+        <tr>
+          <th style="width:48px">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+          </th>
+ <th style="width:80px">  
+            <img style="margin-left:10px; height:35px; width: 80px;" style="vertical-align:middle;"  src="../assets/img/logo_nobu_epay.png"/>
+          </th>
+   <th style="width:140px">
+    <ion-title>Powered By</ion-title>
+          </th>
+           <th style="width:70px">
+            <img style="margin-right:5px; height: 30px; width:60 px;" style=" vertical-align:middle;margin-top: -9px;" src="../assets/img/unikas_logo_new1.png"/>
+            </th>
+        </tr>
+      </thead>
+    </table>
   </ion-navbar>
-</ion-header>
+</ion-header>     
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
+  <!--<ion-avatar (click)="changePicture()">
+    <img [src]="chosenPicture || placeholder" onerror="this.src='assets/img/avatar/girl-avatar.png'" />
+    <button ion-button color="danger">Change image</button>
+  </ion-avatar>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <button ion-button secondary color="light" (click)="goToBarcodescan()">Barcode Scan</button>
+<button ion-button secondary color="light" (click)="tambahSaldo()">Tambah Saldo</button>-->
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<!-- class="profile-avatar" document-type="profile-picture" style ="background-color:#030f48;"-->
+<!--id="profileImage"-->
+<div class="profile">
+  <div class="profile-header">
+     <ion-avatar (click)="changePicture()">
+    <div class="profile-avatar" document-type="profile-picture" style ="background-color:#030f48;">
+      <img  class="profile-avatar-image" [src]="chosenPicture || placeholder" onerror="this.src='../assets/img/images/128.jpg'"
+       width="60" height="60">
+        </div>
+      </ion-avatar>
+
+      <div class="profile-avatar-name-container" style="background-color:#030f48;">
+        <div style="margin:0 auto; text-align:center;">
+          
+          <label class="w-inline-block profile-avatar-name">
+          
+          </label>
+          <div style="margin: 0 auto;text-align:center;" class="w-inline-block">
+          </div>
+        </div>
+        <div style="padding-bottom:10px; color:#fff; opacity:1;" class="profile-avatar-job"></div>
+      </div>
+  </div>
+  
+  <!--bagian yang bawah warna putih-->
+  <div class="profile-figures" align="center" style="background-image: url(../assets/img/images/wallet/img_background_home8.png); 
+  background-size: 100% 100%; border-bottom:0px">
+   <div class="card-profile_user-stats" style="padding-bottom:20px">
+			<div class="stats-holder" >
+				<div class="user-stats">
+				<strong>Saldo</strong>
+				<span>Rp.	0</span>
+			</div>
+      <!--style="background:#030f48; border-radius:20px;"-->
+			<div class="user-stats" >
+				<strong>Poin</strong>
+				<span>	0</span>
+			</div> 
+      </div>
+     
+    </div>
+
+	 <!--<div class="w-row" style="margin-top:10px;">
+        <div class="w-col w-col-5 w-col-small-5 w-col-tiny-5 float_left" style="margin-top:10px; background:#030f48; border-radius:10px; color:white;">
+          <div class="profile-figures-column-group">
+                <div class="home_font"> Saldo</div>
+                <div class="profile-figures-number logo_digit" id="saldo_total" style="padding-top:0px">0</div>
+          </div>
+        </div>
+        <div class="w-col w-col-5 w-col-small-5 w-col-tiny-5 float_left" style="margin-top:10px; background:#030f48; border-radius:10px; color:white;">
+          <div class="profile-figures-column-group">
+                <div class="home_font"> Poin</div>
+                <div class="profile-figures-number logo_digit" id="saldo_total" style="padding-top:0px">0</div>
+          </div>
+        </div>
+      </div>-->
+
+      <!--blm ada data load&pageload-->
+<div class="w=row" style="margin-top:10px;">
+ <div class="w-col w-col-2 w-col-small-2 w-col-tiny-2"></div>
+    <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4">
+      <div class="profile-figures-column-group" style="display:table;margin: 0 auto;" (click)="TambahSaldo()">
+       <!--dibawahinitambahin dataload-->
+      <a class="linkrequest bottom-menu-list" body-class="padding" page-title="Tambah Saldo" href="#">
+        <img src="../assets/img/images/wallet/isiulang.png" width="76px" height="76px"></a>
+        <div class="main_menu"><font color="black"><strong>Tambah </strong><br><strong> Saldo</strong></font></div>
+        <div class="separator-button"></div>
+   </div>
+ </div>
+
+    <div class="w-col w-col-4 w-col-small-4 w-col-tiny-4"> 
+      <div class="profile-figures-column-group" style="display: table; margin: 0 auto;" (click)="Barcodescan()">
+        <a class="scantopay bottom-menu-list" body-class="padding" page-title="Tambah Saldo" href="#">
+          <img src="../assets/img/images/wallet/pembayaran.png" width="76px" height="76px"></a>
+          <div class="main_menu"><font color="black"><strong>Bayar</strong></font></div>
+          <div class="separator-button"></div>
+        </div>
+    </div>
+
+    <div class="w-col w-col-2 w-col-small-2 w-col-tiny-2"></div>
+</div>
+
+
+  </div>
+  
+
+
+</div>
 </ion-content>

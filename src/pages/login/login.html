@@ -1,0 +1,170 @@
+<!--halaman utama login-->
+<ion-content class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+  <ion-slides #slider class="content-slider" direction="vertical">
+    <ion-slide class="swiper-no-swiping">
+<!--background-position 50% 50%;
+        background-size:10px;-->
+      <div align="center" class="logo">
+        <img style="height:70px; " src="../assets/img/images/wallet/logo_nobu_epay.png">
+        <div><p class="light-semitransparent" Style="font-style:italic; margin-top:5px;">
+          Powered by</p></div>
+			<img style=" height: 52px; weight: 100px;"  src="../assets/img/images/wallet/unikas_logo_new1.png">
+        <ion-slides class="text-slider" autoplay="2000">
+          <ion-slide>
+            <h3> Really nice stuff </h3>
+          </ion-slide>
+          <ion-slide>
+            <h3> Really nice stuff </h3>
+          </ion-slide>
+          <ion-slide>
+            <h3> Really nice stuff </h3>
+          </ion-slide>
+        </ion-slides>
+
+
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button round color="favorite" class="login-button" (click)="goToLogin()">Sign In</button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button round color="danger" class="login-button" (click)="goToSignup()">Sign Up</button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-slide>
+
+    <!--halaman sign-in-->
+    <ion-slide class="zoom swiper-no-swiping">
+      <ion-slides #innerSlider class="content-slider">
+        <ion-slide class="swiper-no-swiping">
+           <button ion-button clear (click)="goToSignup()" class="slide-button">
+              Ke halaman Sign Up<ion-icon name="arrow-up"></ion-icon></button>
+          <div style="padding: 20% 32px 32px 32px">
+
+            <form (submit)="doLogin()">
+            <ion-item>
+              <ion-label stacked color="light"></ion-label>
+              <ion-input [(ngModel)]="loginData.UserId" name="UserId" type="text"></ion-input>
+            </ion-item>
+            
+            <ion-item>
+              <ion-label stacked color="light"></ion-label>
+              <ion-input [(ngModel)]="loginData.Password" name="Password" type ="password" ></ion-input>
+            </ion-item>
+             <!--<button ion-button block round (click)="onLogin(loginForm)" type="submit" color="favorite" class="login-button">Masuk</button>-->
+             <button ion-button  block round type="submit" color="favorite">
+      Masuk
+    </button>
+            </form>
+          <!--
+              <ion-item>
+              <ion-label floating>Kata Sandi</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>-->
+           
+  
+
+            <button ion-button clear (click)="slideNext()" color="light" class="forgot-button">Lupa Kata Sandi?</button>
+          </div>
+         
+        </ion-slide>
+
+                <ion-slide class="swiper-no-swiping">
+          <div style="padding: 20% 32px 32px 32px">
+               <ion-item>
+              <ion-label color="light"></ion-label>
+              <ion-input placeholder="Password Baru(minimal 6 karakter)"></ion-input>
+            </ion-item>
+             <ion-item>
+              <ion-label color="light"></ion-label>
+              <ion-input placeholder="Konfirmasi Password Baru"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="light"></ion-label>
+              <ion-input placeholder="PIN Baru(minimal 6 angka)"></ion-input>
+            </ion-item>
+             <ion-item style="padding-bottom:20px">
+              <ion-label color="light"></ion-label>
+              <ion-input placeholder="Konfirmasi PIN Baru"></ion-input>
+            </ion-item>
+            <button ion-button block round (click)="slideNext()" color="favorite" class="login-button" >Ganti Password</button>
+            <button ion-button clear (click)="slidePrevious()" color="light" class="goback-button"><ion-icon name="arrow-back"></ion-icon> Kembali</button>
+          </div>
+        </ion-slide>
+
+<!-- Halaman reset password-->
+        <ion-slide class="swiper-no-swiping">
+          <div style="padding: 20% 32px 32px 32px">
+            <ion-item style="padding-bottom:20px">
+               <ion-label color="light"></ion-label>
+              <ion-input placeholder="Nomor Telepon / Email"></ion-input>
+            </ion-item>
+            <button ion-button block round (click)="KodeUTP()" color="favorite" class="login-button">Reset Password</button>
+            <button ion-button clear (click)="slidePrevious()" color="light" class="goback-button"><ion-icon name="arrow-back"></ion-icon> Kembali</button>
+          </div>
+        </ion-slide>
+<!--form password dan pin-->
+
+
+      </ion-slides>
+    </ion-slide>
+
+    <!--halaman sign up-->
+    <ion-slide class="zoom swiper-no-swiping">
+      <button ion-button clear (click)="goToLogin()" class="slide-button">
+        Ke halaman Login
+        <ion-icon name="arrow-up"></ion-icon>
+      </button>
+      <div style="padding: 28px">
+        <form (submit)="doSignup()">
+    <ion-item>
+      <ion-label stacked>Nomor Handphone</ion-label>
+      <ion-input [(ngModel)]="regData.UserId" name="UserId" type="text" placeholder="Your Number Phone" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input [(ngModel)]="regData.Password" name="Password" type="password" placeholder="Your password"></ion-input>
+    </ion-item>
+    <button ion-button block type="submit" color="favorite">
+      SignUp
+    </button>
+  </form>
+        <!--<form (submit)="doSignUp()">
+        <ion-item>
+          <ion-label stacked>Nama Lengkap</ion-label>
+          <ion-input [(ngModel)]="regData.namalengkap" name="namalengkap" type="text" placeholder="Nama Lengkap"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Nomor Telepon</ion-label>
+          <ion-input [(ngModel)]="regData.username" name="username" type="text" placeholder="username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Alamat Email</ion-label>
+          <ion-input [(ngModel)]="regData.namaemail" name="namaemail" type="email" placeholder="Alamat Email"></ion-input>
+        </ion-item>
+        <ion-item class="margin-bottom">
+          <ion-label stacked>Kata Sandi</ion-label>
+          <ion-input [(ngModel)]="regData.password" name="password" type="password" placeholder="Kata Sandi"></ion-input>
+        </ion-item>
+        <button ion-button block round (click)="signup()" color="favorite" class="login-button">Sign Up</button>
+        </form>-->
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
+<!--<ion-footer align="center">
+  <ion-toolbar>
+    <ion-list>
+      <img width="100px" src="../assets/img/images/wallet/ojk_logo.png" />
+    <ion-title>PT Bank Nationalnobu, Tbk terdaftar dan diawasi oleh Otoritas Jasa Keuangan (OJK)</ion-title>
+    </ion-list>
+  </ion-toolbar>
+</ion-footer>-->
+
+ <ion-footer align="center">
+   <ion-toolbar style="padding-left:30px; padding-right:30px;">
+		<img width="100px" src="../assets/img/images/wallet/ojk_logo.png" />
+		<p>PT Bank Nationalnobu, Tbk terdaftar dan diawasi oleh Otoritas Jasa Keuangan (OJK)</p>
+   </ion-toolbar>
+   </ion-footer>

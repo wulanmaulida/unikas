@@ -1,0 +1,16 @@
+page-profile2 {
+.header{
+    text-align: center;
+}
+ion-content {
+    text-align: center;
+  }
+  ion-avatar img,
+  ion-thumbnail img {
+    display: block;
+    margin: 0 auto;
+    width: 25vh;
+    height: auto;
+  }
+
+}

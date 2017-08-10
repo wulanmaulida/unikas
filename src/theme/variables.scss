@@ -4,7 +4,7 @@
 // Font path is used to include ionicons,
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
-
+$navbar-title-font-size: 18px !default;
 
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
@@ -14,7 +14,9 @@ $app-direction: ltr;
 
 @import "ionic.globals";
 
-
+$text-color:        #000;
+$background-color:  #fff;
+$headings-font-weight: 300;
 // Shared Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override
@@ -22,7 +24,8 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
-
+//app ios variables
+$text-ios-color: #000;
 
 
 // Named Color Variables
@@ -34,32 +37,105 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
+  primary:    #030f48,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  favorite:   #387ef5,
+
 );
 
 
-// App iOS Variables
-// --------------------------------------------------
-// iOS only Sass variables can go here
 
+//untuk tab atas
+$toolbar-md-background: color($colors, primary);
+$toolbar-ios-background: color($colors, primary);
+$tabs-ios-background:     #030f48;
+/// @prop - Font size of the toolbar title
+$toolbar-md-title-font-size:             1.4rem !default;
+$toolbar-ios-title-font-size:             1.4rem !default;
+/// @prop - Font size of the toolbar button
+$toolbar-md-button-font-size:            1.3rem !default;
+$toolbar-ios-button-font-size:            1.3rem !default;
+/// @prop - Text color of the toolbar button
+//$toolbar-md-button-color:  $toolbar-md-title-text-color !default;
 
+ .toolbar-title-md {
+    padding: 0 0px;
+    //font-size: 1.4rem;
+    //font-weight: 20;
+    color: #fff;
+}
 
+//untuk toolbar
+$toolbar-ios-height : 44px;
+$toolbar-md-height: 56px;
+$tollbar-wp-height:46px;
 
+// Style Android buttons
+.md button {
+  text-transform: none;
+}
+
+// Style iOS buttons
+.ios button {
+  text-transform: none;
+}
+// Style Windows Phone buttons
+.wp button {
+  text-transform: none;
+}
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+//$tabs-md-tab-color: rgba(primary, 0.6);
+$text-md-color: #fff;
+$toolbar-md-active-color:                 #fff;
 
+// Change the color of the tabs text
+//warna primary
+$tabs-md-background:     #030f48;
+
+//change the color of the tabs text
+$tabs-md-tab-color-active:                color($colors, light);
+$tabs-md-tab-color-inactive:                color($colors, light);
+//ngeganti icon di tabs warnanya
+//$tabs-md-tab-icon-color: #fff;
+//$tab-button-text: #fff;
+//$tabs-md-tab-color:                       rgba(#fff, 0.7);
+
+// Change the color of the segment button text
+$toolbar-md-active-color:                 #fff;
+$toolbar-md-inactive-color:               #fff;
+$segment-button-md-text-color-activated:  #fff;
+
+
+
+$tabs-height: 49px !default;
+$tabs-text-font-size: 14px !default;
+$tabs-text-font-size-side-icon: 10px !default;
+$tabs-icon-size: 32px !default;
+$tabs-badge-padding: 1px 6px !default;
+$tabs-badge-font-size: 12px !default;
+
+
+//App Ios Variables
+
+$tabs-ios-tab-color-active:                color($colors, light);
+$tabs-ios-tab-color-inactive:                color($colors, light);
+$toolbar-ios-active-color:                 #fff;
+$toolbar-ios-inactive-color:               #fff;
+$segment-button-ios-text-color-activated:  #fff;
+$text-ios-color: #fff;
+$toolbar-ios-active-color:                 #fff;
 
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
+$text-wp-color: #000;
 
 
 
@@ -83,6 +159,39 @@ $colors: (
 
 // Fonts
 // --------------------------------------------------
+$font-family-base: $font-family-sans-serif !default;
+$font-size-base: 14px !default;
+$font-size-large: 18px !default;
+$font-size-small: 11px !default;
 
 @import "roboto";
 @import "noto-sans";
+
+//unikas
+.support_field img {
+	display: block;
+    margin: auto;
+}
+.support_field label {
+	margin-top: 0px;
+	font-size: 9px;
+	text-align: center;
+	font-style: italic;
+	color: white;
+}
+.support_field p {
+	margin-top: 10px;
+	color: white;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+.inline {
+	padding-left: 5px;
+	margin: 0 auto;
+	padding-right: 5px;
+}
+
+.bg_solid {
+	background-color: #030f48;
+}

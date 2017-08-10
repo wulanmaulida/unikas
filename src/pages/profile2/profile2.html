@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-avatar (click)="changePicture()">
+    <img [src]="chosenPicture || placeholder" onerror="this.src='assets/img/avatar/girl-avatar.png'" />
+    <button ion-button color="danger">Change image</button>
+  </ion-avatar>
+
+
+  <button ion-button secondary color="light" (click)="goToBarcodescan()">Barcode Scan</button>
+<button ion-button secondary color="light" (click)="tambahSaldo()">Tambah Saldo</button>
+</ion-content>

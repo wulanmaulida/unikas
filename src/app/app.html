@@ -5,15 +5,45 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content class="custom">
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">  
+        <ion-icon [name]="p.icon" item-left></ion-icon>
         {{p.title}}
+      </button> 
+     <!-- 
+      <button menuClose ion-item (click)="goHome()"> Beranda
+      <ion-icon name='home' item-left></ion-icon>
       </button>
+       <button menuClose ion-item (click)="goProfil()"> Profil
+      <ion-icon name='person' item-left></ion-icon>
+      </button>
+       <button menuClose ion-item (click)="goUbahPassword()"> Ubah Kata Sandi
+      <ion-icon name='lock' item-left></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="goUbahPin()"> Ubah Pin 
+      <ion-icon name='camera' item-left></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="goSyarat()"> Syarat dan Ketentuan
+      <ion-icon name='alert' item-left></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="goNobuIPage()"> Nobu i-Banking
+      <ion-icon name='warning' item-left></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="goPengaturan()"> Pengaturan
+      <ion-icon name='settings' item-left></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="goBantuan()"> Bantuan
+      <ion-icon name='help-circle' item-left></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="goBantuan()"> Keluar
+      <ion-icon name='log-out' item-left></ion-icon>
+      </button>
+    -->
     </ion-list>
   </ion-content>
 
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav  [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

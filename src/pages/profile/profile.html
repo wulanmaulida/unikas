@@ -1,0 +1,152 @@
+<ion-header>
+  <ion-navbar>
+    <table class>
+      <thead>
+        <tr>
+         <!-- <th style="width:48px">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+          </th>-->
+ <th style="width:80px">  
+            <img style="margin-left:10px; height:35px; width: 80px;" style="vertical-align: :middle;"  src="../assets/img/logo_nobu_epay.png"/>
+          </th>
+   <th style="width:140px">
+    <ion-title>Ubah Profil</ion-title>
+          </th>
+           <th style="width: 70px">
+            <img style="margin-right:5px; height: 30px; width:60 px;" style=" vertical-align:middle;margin-top: -9px;" src="../assets/img/unikas_logo_new1.png"/>
+            </th>
+        </tr>
+      </thead>
+    </table>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+ <ion-list>
+     <!-- <form [ngFormModel]="form"> -->
+  <!-- <form #myForm='ngForm' (ngSubmit)="onSubmit(myForm)">-->
+<ion-item>
+        <ion-label floating>Nama Lengkap</ion-label>
+        <ion-input type="text"></ion-input>
+</ion-item>
+
+ <table class>
+   <thead>
+     <tr>
+       <th> 
+         <ion-item>
+        <ion-label floating>Tempat Lahir</ion-label>
+        <ion-input type="text"></ion-input>
+</ion-item>
+          </th>
+       <th> <ion-item>
+        <ion-label floating>KTP</ion-label>
+        <ion-input type="text"></ion-input>
+</ion-item> </th>
+     </tr>
+   </thead>
+ </table>
+
+<ion-item>
+  <ion-label>Jenis Kelamin</ion-label>
+  <ion-select [(ngModel)]="popover">
+    <ion-option value="f">Wanita</ion-option>
+    <ion-option value="m">Pria</ion-option>
+  </ion-select>
+</ion-item>
+
+<ion-item>
+  <ion-label>Tanggal Lahir (dd/mm/yyyy)</ion-label>
+  <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate">
+  </ion-datetime>
+</ion-item>
+<ion-item>
+        <ion-label floating>Alamat(sesuai KTP)</ion-label>
+        <ion-input type="text"></ion-input>
+</ion-item>
+
+<table class>
+  <thead>
+    <tr>
+      <th>    
+<ion-item>
+        <ion-label floating>RT</ion-label>
+        <ion-input type="text"></ion-input>
+</ion-item>
+</th>
+<th>
+<ion-item>
+        <ion-label floating>RW</ion-label>
+        <ion-input type="text"></ion-input>
+</ion-item>
+</th>
+<th>
+<ion-item>
+        <ion-label floating>Kode Pos</ion-label>
+        <ion-input type="text"></ion-input>
+</ion-item>
+</th>
+    </tr>
+  </thead>
+</table>
+<table class>
+  <thead>
+    <tr>
+      <th>
+<ion-item>
+        <ion-label floating>Kecamatan</ion-label>
+        <ion-input type="text"></ion-input>
+</ion-item>
+      </th>
+  <th>
+<ion-item>
+        <ion-label floating>Kelurahan</ion-label>
+        <ion-input type="text"></ion-input>
+</ion-item>
+  </th>
+    </tr>
+  </thead>
+</table>
+
+<ion-item>
+        <ion-label floating>Kota</ion-label>
+        <ion-input type="text"></ion-input>
+</ion-item>
+
+  <ion-item>
+    <ion-label >Alamat(Domisili)</ion-label>
+      
+ </ion-item>
+  <ion-item>
+     <ion-label>  sesuai alamat KTP?</ion-label>
+       <ion-checkbox [(ngModel)]="cucumber"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+        <ion-input type="text"></ion-input>     
+</ion-item>
+<table class>
+   <thead>
+     <tr>
+       <th> 
+         <ion-item>
+        <ion-label floating>NPWP</ion-label>
+        <ion-input type="text"></ion-input>
+</ion-item>
+          </th>
+       <th> <ion-item>
+        <ion-label floating>Nama Ibu</ion-label>
+        <ion-input type="text"></ion-input>
+</ion-item> </th>
+     </tr>
+   </thead>
+ </table>
+ 
+ </ion-list>  
+ 
+  <button ion-button block round  color="primary" style="text-transform: none" class="login-button">Simpan</button>
+ <!--</form>-->
+</ion-content>
